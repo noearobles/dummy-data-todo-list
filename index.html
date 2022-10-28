@@ -11,13 +11,23 @@
 </head>
 
 <body>
+    <h1>TO DO LIST!</h1>
     <button onclick="fetchTodos()">Fetch Todos</button>
     <button onclick="logTodos()">Log Todos</button>
     <button onclick="populateTodos()">Populate Todos</button>
-    <ol id="todo-list">
-    <!-- LIs will go here -->
-    </ol>
-    <script src="./todo.js"></script>
+    <div class="filter-row">
+        <div class="form-group">
+            <label for="userID">UserID</label>
+                <input type="number" min="1" max="10">
+                <button onclick="filterTodos()">Filter Todos</button>
+        </div>
+
+        <ol id="todo-list">
+        </ol>
+        <!-- LIs will go here -->
+
+
+        <script src="./todo.js"></script>
 </body>
 
 </html>

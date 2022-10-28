@@ -13,7 +13,7 @@ let arrayOfTodos = [
         "title": "delectus aut autem",
         "completed": false
     }]
-
+let filterdTodos 
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
@@ -24,27 +24,37 @@ const logTodos = () => {
     console.log(arrayOfTodos)
 }
 
-
+let ol = document.getElementById("todo-list")
 const populateTodos = () => {
     // get elements to put todos in
-    let ol = document.getElementById("todo-list")
     // loop thru arrays of todos
     for (let i = 0; i < arrayOfTodos.length; i++) {
         // create element to make a new li
         let listItem = document.createElement("li")
         console.log(listItem)
-        let text = document.createTextNode(arrayOfTodos[i].title)
+        let listItemText = document.createTextNode(arrayOfTodos[i].title)
 
-        console.log(text)
+
         // create text node to put title property
 
         // append text to li element
-        listItem.appendChild(text)
-        console.log(listItem)
+        listItem.appendChild(listItemText)
+
 
         //append li element to ol
         ol.appendChild(listItem)
-        console.log(ol)
-
     }
+
+}
+const filteredTodos = () => {
+    let userIdElement = document.getElementById("userId")
+    let userIdValue = userIdElement.value
+    console.log('userIdElement:', [userIdElement])
+    consoile.log('userIdValue:', userIdValue)
+    
+    ol.innerHTML = null
+    filteredOfTodos.filter((todo) => {
+        return todo.userId === userIdValue
+    })
+    console.log('filteredTodos:', filterTodos)
 }
