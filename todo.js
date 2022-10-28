@@ -13,7 +13,7 @@ let arrayOfTodos = [
         "title": "delectus aut autem",
         "completed": false
     }]
-let filterdTodos 
+let filterTodos 
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
@@ -46,15 +46,15 @@ const populateTodos = () => {
     }
 
 }
-const filteredTodos = () => {
+const filterTodos = () => {
     let userIdElement = document.getElementById("userId")
     let userIdValue = userIdElement.value
     console.log('userIdElement:', [userIdElement])
     consoile.log('userIdValue:', userIdValue)
     
     ol.innerHTML = null
-    filteredOfTodos.filter((todo) => {
+    filterTodos.filter((todo) => {
         return todo.userId === userIdValue
     })
-    console.log('filteredTodos:', filterTodos)
+    console.log('filterTodos:', filterTodos)
 }
