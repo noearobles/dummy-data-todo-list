@@ -1,0 +1,19 @@
+body {background-color: rgb(80, 80, 239);
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    grid-template-columns: repeat(3, 1 1 1);
+}
+.buttons{
+ 
+}
+button {border-radius: 10px;width: 80%;
+    color: blueviolet;
+    font-weight: bolder;
+}
+ol{
+    font-size: smaller;font-weight: bolder;
+}
+#todo-list{
+    align-items: center;
+}

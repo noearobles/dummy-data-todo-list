@@ -5,29 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arimo&family=Fira+Sans&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <title>To Do List</title>
 </head>
 
 <body>
-    <h1>TO DO LIST!</h1>
-    <button onclick="fetchTodos()">Fetch Todos</button>
-    <button onclick="logTodos()">Log Todos</button>
-    <button onclick="populateTodos()">Populate Todos</button>
-    <div class="filter-row">
-        <div class="form-group">
-            <label for="userID">UserID</label>
+    <div class="buttons">
+        <button onclick="fetchTodos()">Fetch Todos</button>
+        <button onclick="logTodos()">Log Todos</button>
+        <button onclick="populateTodos()">Populate Todos</button>
+        <div class="filter-row">
+            <div class="form-group">
+                <label for="userID" aria-placeholder="UserID"></label>
                 <input type="number" min="1" max="10">
                 <button onclick="filterTodos()">Filter Todos</button>
+
+
+
+            </div>
+
         </div>
-
-        <ol id="todo-list">
-        </ol>
+    </div>
+    <ol id="todo-list">
         <!-- LIs will go here -->
-
-
-        <script src="./todo.js"></script>
+    </ol>
+    <script src="./todo.js"></script>
 </body>
 
 </html>
