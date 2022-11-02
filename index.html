@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Arimo&family=Fira+Sans&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
     <title>To Do List</title>
 </head>
@@ -21,19 +22,18 @@
         <button onclick="populateTodos()">Populate Todos</button>
         <div class="filter-row">
             <div class="form-group">
-                <label for="userID" aria-placeholder="UserID"></label>
-                <input type="number" min="1" max="10">
+                <label for="userID">UserId</label>
+                <input id="userID" type="number" min="1" max="10">
                 <button onclick="filterTodos()">Filter Todos</button>
-
-
-
-            </div>
-
+                <button onclick="completed()">Completed</button>
+                <button onclick="incompleted()">Incomplete</button>
         </div>
-    </div>
+    </div> 
+    <div id="listContainer">
     <ol id="todo-list">
         <!-- LIs will go here -->
     </ol>
+    </div>
     <script src="./todo.js"></script>
 </body>
 
