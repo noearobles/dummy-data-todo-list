@@ -14,37 +14,113 @@ let arrayOfTodos = [
         "completed": false
     }]
 
+let ol = document.getElementById("todo-list")
+
+
+
+// this will fetch the array from the json//
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
-        .then((json) => arrayOfTodos = json)
+        .then((json) => (arrayOfTodos = json))
 }
 
+
+// this will log the array//
 const logTodos = () => {
     console.log(arrayOfTodos)
 }
 
 
+// this clear the list //
+const clearList = () => {
+
+    ol.remove();
+    let liContainer = document.getElementById("listContainer")
+    liContainer.innerHTML = "<ol id='todo-list'></ol>"
+    ol = document.getElementById("todo-list")
+
+}
+
+
+
+// this will populate the list//
 const populateTodos = () => {
-    // get elements to put todos in
-    let ol = document.getElementById("todo-list")
-    // loop thru arrays of todos
+
+    clearList();
+
     for (let i = 0; i < arrayOfTodos.length; i++) {
-        // create element to make a new li
-        let listItem = document.createElement("li")
-        console.log(listItem)
-        let text = document.createTextNode(arrayOfTodos[i].title)
+        let newListItem = document.createElement("LI")
+        newListItem.innerText = arrayOfTodos[i].title
+        ol.appendChild(newListItem)
+    }
+}
 
-        console.log(text)
-        // create text node to put title property
+// this will filter the toDos//
+const filterTodos = () => {
 
-        // append text to li element
-        listItem.appendChild(text)
-        console.log(listItem)
 
-        //append li element to ol
-        ol.appendChild(listItem)
-        console.log(ol)
+    let userIdElement = document.getElementById("userId")
+    console.log("UserIdElement:", userIdElement)
 
+
+    let userIdValue = userIdElement.value;
+    console.log("userIdValue:", userIdValue)
+
+
+    let filterTodos = arrayOfTodos.filter((todo) => {
+        console.log(todo.userId == userIdValue)
+        return todo.userId == userIdValue
+    })
+
+    console.log("filterTodos:", filterTodos)
+
+    for (let i = 0; i < filterTodos.length; i++) {
+        let newListItem = document.createElement("LI")
+        newListItem.innerText = filterTodos[i].title
+        ol.appendChild(newListItem)
+    }
+}
+
+// this is for the completed button//
+const completed = () => {
+
+    clearList();
+
+    let complete = arrayOfTodos.filter((todo) => {
+        console.log(todo.completed == true)
+        return todo.completed == true
+    })
+
+    console.log("complete:", complete)
+
+    for (let i = 0; i < complete.length; i++) {
+        let newListItem = document.createElement("LI")
+        newListItem.innerText = complete[i].title
+        ol.appendChild(newListItem)
+    }
+}
+
+
+
+//   this is for the incomplete button//
+const incompleted = () => {
+
+    clearList()
+
+    let incomplete = arrayOfTodos.filter((todo) => {
+        console.log(todo.completed == false)
+        return todo.completed == false
+    })
+
+
+    console.log("Incomplete:", incomplete)
+
+
+
+    for (let i = 0; i < incomplete.length; i++) {
+        let newListItem = document.createElement("LI")
+        newListItem.innerText = incomplete[i].title
+        ol.appendChild(newListItem)
     }
 }

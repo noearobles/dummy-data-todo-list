@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Arimo&family=Fira+Sans&family=Roboto+Condensed:ital,wght@0,700;1,400&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
     <title>To Do List</title>
 </head>
@@ -19,10 +20,20 @@
         <button onclick="fetchTodos()">Fetch Todos</button>
         <button onclick="logTodos()">Log Todos</button>
         <button onclick="populateTodos()">Populate Todos</button>
-    </div>
+
+        <div class="filter-row">
+            <div class="form-group">
+                <label for="userID">UserId</label>
+                <input id="userID" type="number" min="1" max="10">
+                <button onclick="filterTodos()">Filter Todos</button>
+                <button onclick="completed()">Completed</button>
+                <button onclick="incompleted()">Incomplete</button>
+        </div>
+    <div id="listContainer">
     <ol id="todo-list">
         <!-- LIs will go here -->
     </ol>
+    </div>
     <script src="./todo.js"></script>
 </body>
 

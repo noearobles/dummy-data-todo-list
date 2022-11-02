@@ -2,18 +2,34 @@ body {background-color: rgb(80, 80, 239);
     font-family: 'Arimo', sans-serif;
     font-family: 'Fira Sans', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
-    grid-template-columns: repeat(3, 1 1 1);
+
 }
+
 .buttons{
-    display: flex;align-items: center;
+    display:grid;grid-template-columns:max-content;justify-content: center;
 }
+
 button {border-radius: 10px;width: 80%;
     color: blueviolet;
     font-weight: bolder;
+    padding: 10px;
+    display: inline;
+    border-radius: 2px;
+    font-family: "Arial";
+    border: 0;
+    margin: 0 10px;
+    background: rgb(229, 1, 1);
+    font-size: 15px;    
+    line-height: 15px;
+    color: white;
+    width: auto;
+    height: auto;
+    box-sizing: content-box;
+
 }
 ol{
     font-size: smaller;font-weight: bolder;
 }
 #todo-list{
     align-items: center;
-}
+
